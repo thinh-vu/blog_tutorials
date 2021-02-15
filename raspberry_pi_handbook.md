@@ -1,6 +1,6 @@
 # RASBERRY PI QUICK START GUIDE
 
-## 1. Update system
+## 1. Update system packages
 
 ## 2. Install and set Python 3.8 as default python
 Read the guide [here](https://github.com/mrthinh/rasberry_pi4/blob/main/guide_book/upgrade_python.md)
