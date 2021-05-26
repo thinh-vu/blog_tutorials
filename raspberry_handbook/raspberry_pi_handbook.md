@@ -83,32 +83,6 @@ python3.8 -m pip install SomePackage  # specifically Python 3.8
 
 *For the full guide. Read it from Python document [here](https://docs.python.org/3/installing/index.html)
 
-# 10. Install Miniconda on Pi
-### Install Miniconda package (default python 3.4)
-* Run this command to begin installing Miniconda
-```
-wget http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-armv7l.sh
-sudo md5sum Miniconda3-latest-Linux-armv7l.sh # (optional) check md5
-sudo /bin/bash Miniconda3-latest-Linux-armv7l.sh # -> change default directory to /home/pi/miniconda3
-sudo nano /home/pi/.bashrc # -> add: export PATH="/home/pi/miniconda3/bin:$PATH"
-sudo reboot -h now
-```
-* Type `yes` when asked to accept the terms
-* When asked for Path to install miniconda, please input `/home/pi/miniconda3` . We will add this path to path on later step to indicate where to look at and run miniconda.
-* Now we need to add miniconda path to bashrc. Run this command
-`sudo nano /home/pi/.bashrc`
-Navigate to the end of this file and add this line `export PATH="/home/pi/miniconda3/bin:$PATH"`
-Now Exist by Ctrl + D and Save by type Y
-* Run `conda` to verify if successfully install
-### Upgrade python on Miniconda
-* The python installed along with miniconda was python3.4. To use the latest python or to work with Google Colab on Local machine, you should install the latest conda.
-`conda config --add channels rpi`
-Now I add Berryconda - the package manager by jjhelmus
-`conda install python=3.8`
-Now I need to select the environment with python version added
-
-`conda create --name py38 python=3.8`
-* Now we can activate the enviroment  ```source activate py38```
 # 11. Using pydrive to exchange file with Google Drive
 ## 11.1 Authorizations 
 * Create a project folder, for example _pydrive_
