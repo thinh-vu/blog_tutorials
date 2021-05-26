@@ -2,10 +2,16 @@
 
 ## 1. Update system packages
 
-## 2. Install and set Python 3.8 as default python
+## 2. Force Pi boot to UI mode
+* Run ```sudo pcmanfm``` to open file manager with root previledge.
+* Navigate to the ```/boot``` folder and find ```config.txt``` file to open.
+* Remove hash (#) to left this line as ```hdmi_force_hotplug=1```
+![Remove overscan black border](https://github.com/mrthinh/data_science_and_automation/blob/main/media/2021-02-06-212658_1920x1080_scrot.png)
+
+## 3. Install and set Python 3.8 as default python
 Read the guide [here](https://github.com/mrthinh/rasberry_pi4/blob/main/guide_book/upgrade_python.md)
 
-## 3. Install ibus vietnamese input method
+## 4. Install ibus vietnamese input method
 * Open terminal on Rasberry Pi by press: Ctrl + Alt + T
 * Run the following command:
 ```
@@ -13,9 +19,9 @@ sudo apt-get update && sudo apt-get install ibus-unikey
 ```
 * Config ibus-unikey. You may want to change the shortcut combination to change input method from Super + Space into Ctrl + Shift + Space
 
-## 4. Take screenshot with scrot command
+## 5. Take screenshot with scrot command
 
-## 5. Setup local runtime to run Google Colab Notebook
+## 6. Setup local runtime to run Google Colab Notebook
 
 Although we already upgraded default python from 2.7 to the 3.8 version, we have to use ```pip3``` to install required libraries instead of ```pip``` on Rasberry Pi. Because of when we run ```pip``` command on Terminal, the system understand that it's pip2 version. So, we have to change all the ```pip``` command to ```pip3``` to install required libraries for Google Colab on local machine.
 
@@ -34,16 +40,11 @@ Do this by running ```export PATH=$PATH:~/.local/bin``` for your current session
 * Step 3: Start server and authenticate
 
 ```jupyter notebook --NotebookApp.allow_origin='https://colab.research.google.com' --port=8888 --NotebookApp.port_retries=0```
-## 6. Install required libraries to use for Python datascience
+## 7. Install required libraries to use for Python datascience
 
 ```
 
 ```
-## 7. Force Pi boot to UI mode
-* Run ```sudo pcmanfm``` to open file manager with root previledge.
-* Navigate to the ```/boot``` folder and find ```config.txt``` file to open.
-* Remove hash (#) to left this line as ```hdmi_force_hotplug=1```
-![Remove overscan black border](https://github.com/mrthinh/data_science_and_automation/blob/main/media/2021-02-06-212658_1920x1080_scrot.png)
 
 ## 8. Enable VNC Server from Boot
 * VNC has been installed on Rasberry by default. However if you are not using the UI mode. You can install it by this code
