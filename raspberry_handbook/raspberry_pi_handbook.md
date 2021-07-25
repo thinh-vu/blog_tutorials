@@ -2,10 +2,16 @@
 
 ## 1. Update system packages
 
-## 2. Install and set Python 3.8 as default python
+## 2. Force Pi boot to UI mode
+* Run ```sudo pcmanfm``` to open file manager with root previledge.
+* Navigate to the ```/boot``` folder and find ```config.txt``` file to open.
+* Remove hash (#) to left this line as ```hdmi_force_hotplug=1```
+![Remove overscan black border](https://github.com/mrthinh/data_science_and_automation/blob/main/media/2021-02-06-212658_1920x1080_scrot.png)
+
+## 3. Install and set Python 3.8 as default python
 Read the guide [here](https://github.com/mrthinh/rasberry_pi4/blob/main/guide_book/upgrade_python.md)
 
-## 3. Install ibus vietnamese input method
+## 4. Install ibus vietnamese input method
 * Open terminal on Rasberry Pi by press: Ctrl + Alt + T
 * Run the following command:
 ```
@@ -13,9 +19,9 @@ sudo apt-get update && sudo apt-get install ibus-unikey
 ```
 * Config ibus-unikey. You may want to change the shortcut combination to change input method from Super + Space into Ctrl + Shift + Space
 
-## 4. Take screenshot with scrot command
+## 5. Take screenshot with scrot command
 
-## 5. Setup local runtime to run Google Colab Notebook
+## 6. Setup local runtime to run Google Colab Notebook
 
 Although we already upgraded default python from 2.7 to the 3.8 version, we have to use ```pip3``` to install required libraries instead of ```pip``` on Rasberry Pi. Because of when we run ```pip``` command on Terminal, the system understand that it's pip2 version. So, we have to change all the ```pip``` command to ```pip3``` to install required libraries for Google Colab on local machine.
 
@@ -34,16 +40,11 @@ Do this by running ```export PATH=$PATH:~/.local/bin``` for your current session
 * Step 3: Start server and authenticate
 
 ```jupyter notebook --NotebookApp.allow_origin='https://colab.research.google.com' --port=8888 --NotebookApp.port_retries=0```
-## 6. Install required libraries to use for Python datascience
+## 7. Install required libraries to use for Python datascience
 
 ```
 
 ```
-## 7. Force Pi boot to UI mode
-* Run ```sudo pcmanfm``` to open file manager with root previledge.
-* Navigate to the ```/boot``` folder and find ```config.txt``` file to open.
-* Remove hash (#) to left this line as ```hdmi_force_hotplug=1```
-![Remove overscan black border](https://github.com/mrthinh/data_science_and_automation/blob/main/media/2021-02-06-212658_1920x1080_scrot.png)
 
 ## 8. Enable VNC Server from Boot
 * VNC has been installed on Rasberry by default. However if you are not using the UI mode. You can install it by this code
@@ -83,32 +84,6 @@ python3.8 -m pip install SomePackage  # specifically Python 3.8
 
 *For the full guide. Read it from Python document [here](https://docs.python.org/3/installing/index.html)
 
-# 10. Install Miniconda on Pi
-### Install Miniconda package (default python 3.4)
-* Run this command to begin installing Miniconda
-```
-wget http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-armv7l.sh
-sudo md5sum Miniconda3-latest-Linux-armv7l.sh # (optional) check md5
-sudo /bin/bash Miniconda3-latest-Linux-armv7l.sh # -> change default directory to /home/pi/miniconda3
-sudo nano /home/pi/.bashrc # -> add: export PATH="/home/pi/miniconda3/bin:$PATH"
-sudo reboot -h now
-```
-* Type `yes` when asked to accept the terms
-* When asked for Path to install miniconda, please input `/home/pi/miniconda3` . We will add this path to path on later step to indicate where to look at and run miniconda.
-* Now we need to add miniconda path to bashrc. Run this command
-`sudo nano /home/pi/.bashrc`
-Navigate to the end of this file and add this line `export PATH="/home/pi/miniconda3/bin:$PATH"`
-Now Exist by Ctrl + D and Save by type Y
-* Run `conda` to verify if successfully install
-### Upgrade python on Miniconda
-* The python installed along with miniconda was python3.4. To use the latest python or to work with Google Colab on Local machine, you should install the latest conda.
-`conda config --add channels rpi`
-Now I add Berryconda - the package manager by jjhelmus
-`conda install python=3.8`
-Now I need to select the environment with python version added
-
-`conda create --name py38 python=3.8`
-* Now we can activate the enviroment  ```source activate py38```
 # 11. Using pydrive to exchange file with Google Drive
 ## 11.1 Authorizations 
 * Create a project folder, for example _pydrive_
