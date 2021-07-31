@@ -40,13 +40,7 @@ Do this by running ```export PATH=$PATH:~/.local/bin``` for your current session
 * Step 3: Start server and authenticate
 
 ```jupyter notebook --NotebookApp.allow_origin='https://colab.research.google.com' --port=8888 --NotebookApp.port_retries=0```
-## 7. Install required libraries to use for Python datascience
-
-```
-
-```
-
-## 8. Enable VNC Server from Boot
+## 7. Enable VNC Server from Boot
 * VNC has been installed on Rasberry by default. However if you are not using the UI mode. You can install it by this code
 ```sudo apt update``` then ```sudo apt install realvnc-vnc-server realvnc-vnc-viewer```
 * Enable VNC from boot command line
@@ -57,7 +51,7 @@ Navigate to Interfacing Options. Scroll down and select VNC > Yes.
 Select Menu > Preferences > Raspberry Pi Configuration > Interfaces.
 Ensure VNC is Enabled.
 
-## 9. Understanding pip
+## 8. Understanding pip
 * Using pip to install modules for python 3.8 
 *The following command will install the latest version of a module and its dependencies from the Python Packaging Index. For instance, install the latest version of pandas.*
 
@@ -84,8 +78,8 @@ python3.8 -m pip install SomePackage  # specifically Python 3.8
 
 *For the full guide. Read it from Python document [here](https://docs.python.org/3/installing/index.html)
 
-# 11. Using pydrive to exchange file with Google Drive
-## 11.1 Authorizations 
+# 9. Using pydrive to exchange file with Google Drive
+## 9.1 Authorizations 
 * Create a project folder, for example _pydrive_
 * Copy these lines of code and create a `quickstart.py` file inside the folder you just created
 ```
@@ -114,7 +108,7 @@ oauth_scope:
   - https://www.googleapis.com/auth/drive.install
 ```
 * Run the `quickstart.py` file and authorize for your first time with Google. After that, you won't need to authorize again. A `credentials.json` file is automatically create when you run the `quickstart.py` file.
-## 11.2. Upload file to Google Drive
+## 9.2. Upload file to Google Drive
 Add these lines of code to the `quickstart.py` file, then you can upload a local file to a specific folder in Google Drive by its ID
 ```
 db_funnel_upload = drive.CreateFile()
@@ -122,10 +116,10 @@ db_funnel_upload = drive.CreateFile({'title': "db_aip_query_2021-01-01_to_2021-0
 db_funnel_upload.SetContentFile('/home/pi/Documents/Colab Notebooks/data/db_query/db_aip_query_2021-01-01_to_2021-02-08.csv')
 db_funnel_upload.Upload()
 ```
-# 12. Cloud sync on Raspi with Rclone
-## 12.1. Google Drive Sync
-## 12.2. OneDrive Sync 
-### 12.2.1. Create an application on Microsoft Azure
+# 10. Cloud sync on Raspi with Rclone
+## 10.1. Google Drive Sync
+## 10.2. OneDrive Sync 
+### 10.2.1. Create an application on Microsoft Azure
 1. Log in to Microsoft Azure portal.
 2. Search "Azure Active Directory" at the top of text input box. And open "Azure Active Directory".
 3. Click "App registrations" at the left side bar.
@@ -144,7 +138,7 @@ db_funnel_upload.Upload()
 11. [Help](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app) in image
 ![image azure](https://github.com/mrthinh/data_science_and_automation/blob/main/media/rclone_raspi_azure.png)
 
-# 13. Scheduling your script with crontab
+# 11. Scheduling your script with crontab
 * **What is cron?**
 Cron is a time based scheduler found in “Unix-like” operating systems (such as Raspbian). Just like setting up a notification or recurring notification in a calendar or scheduling app for day to day appointments, Cron allows you to schedule scripts and programs. 
 
@@ -182,7 +176,7 @@ The script can be anything you can run in the terminal and is not limited to pyt
 
 ![Cron structure](https://bc-robotics.com/wp-content/uploads/2019/08/5-1.jpg)
 
-# 14. Install Dbeaver community edition
+# 12. Install Dbeaver community edition
 _dbeaver for Rasberry Pi seems doesn't work at that time_
 * Enable snaps on Raspberry Pi and install dbeaver-ce
 ```
