@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 # RASBERRY PI QUICK START GUIDE
 
 ## 1. Update system packages
@@ -394,6 +393,3 @@ sudo reboot
 ```
 sudo snap install dbeaver-ce
 ```
-
-
->>>>>>> Stashed changes
