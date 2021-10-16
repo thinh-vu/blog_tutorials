@@ -1,6 +1,6 @@
 ![automated facebook ads report to google sheets](https://thinhvu.com/wp-content/uploads/2021/10/automated_facebook_ads_report_to_google_sheets.jpg "Cập nhật báo cáo Facebook Ads tự động với Google Sheets và Apps Script 1")
 
-# Cập nhật báo cáo Facebook Ads tự động với Google Sheets và Apps Script
+# Cập nhật báo cáo Facebook Ads tự động với Google Sheets và Apps Script
 
 [Data Science](https://thinhvu.com/data-science/) By [mrthinh](https://thinhvu.com/author/mrthinh/) [October 16, 2021](https://thinhvu.com/2021/10/16/bao-cao-facebook-ads-tu-dong-google-sheets/) [No Comments](https://thinhvu.com/2021/10/16/bao-cao-facebook-ads-tu-dong-google-sheets/#respond)
 
@@ -8,7 +8,7 @@ Quảng cáo Facebook từ lâu đã là 1 trong những lựa chọn hàng đ�
 
 Để thiết lập báo cáo Facebook Ads tự động có thể thấy sẽ thực hiện được bằng 2 cách cơ bản: mua dịch vụ của bên thứ 3 hoặc tự phát triển công cụ thông qua lập trình. Với tuỳ chọn sử dụng dịch vụ của bên thứ 3 thì SuperMetrics là cái tên rất phổ biến có thể bạn đã từng nghe tới. Bạn có thể phải bỏ ra 99EUR/tháng để mua gói dịch vụ cơ bản Supermetrics for Google Sheets hoặc 69 EUR/tháng cho dịch vụ Supermetrics for Data Studio với duy nhất 1 nguồn dữ liệu. Một số công cty có đội ngũ lập trình, sử dụng dịch vụ đám mây bài bản thì có thể tự động hoá quy trình nhập dữ liệu quảng cáo vào database một cách đơn giản nhưng phần đông các marketer tôi gặp không may mắn làm ở các đơn vị như vậy.
 
-![SuperMetrics là công cụ thường xuyên được sử dụng để tạo báo cáo Facebook Ads tự động](https://thinhvu.com/wp-content/uploads/2021/10/supermetrics_pricing-1024x709.png "Cập nhật báo cáo Facebook Ads tự động với Google Sheets và Apps Script 2")
+![SuperMetrics là công cụ thường xuyên được sử dụng để tạo báo cáo Facebook Ads tự động](https://thinhvu.com/wp-content/uploads/2021/10/supermetrics_pricing-1024x709.png "Cập nhật báo cáo Facebook Ads tự động với Google Sheets và Apps Script 2")
 
 SuperMetrics là công cụ thường xuyên được sử dụng để tạo báo cáo Facebook Ads tự động
 
@@ -23,7 +23,7 @@ Acess token ở đây được hiểu đơn giản là 1 dãy ký tự ngẫu nh
 
 ## 2. Lưu trữ Facebook Access Token với Google Docs
 
-Không có cách lưu trữ khoá bảo mật của bạn an toàn một cách hoàn hảo, trong lập trình cũng vậy. Khi bạn sử dụng Google Apps Script để viết ứng dụng của mình, việc lưu trữ cố định access token ngay trong file Scripttuy đơn giản nhưng bất tiện trong nhiều trường hợp và tiềm ẩn rủi ro bảo mật. Dễ dàng nhận ra khi bạn làm việc cùng team của mình và file Google Sheets dùng để cập nhật dữ liệu báo cáo, cần chia sẻ với team thì ai cũng có thể dễ dàng mở phần code của file và thấy được Access Token của bạn. Để hạn chế rủi ro này, chúng ta sẽ lưu trữ Access Token vào 1 file Google Docs và import thông tin này bằng Google Apps Script.
+Không có cách lưu trữ khoá bảo mật của bạn an toàn một cách hoàn hảo, trong lập trình cũng vậy. Khi bạn sử dụng Google Apps Script để viết ứng dụng của mình, việc lưu trữ cố định access token ngay trong file Script tuy đơn giản nhưng bất tiện trong nhiều trường hợp và tiềm ẩn rủi ro bảo mật. Dễ dàng nhận ra khi bạn làm việc cùng team của mình và file Google Sheets dùng để cập nhật dữ liệu báo cáo, cần chia sẻ với team thì ai cũng có thể dễ dàng mở phần code của file và thấy được Access Token của bạn. Để hạn chế rủi ro này, chúng ta sẽ lưu trữ Access Token vào 1 file Google Docs và import thông tin này bằng Google Apps Script.
 
 Vì vậy bạn cần tạo mới 1 file Google Docs, paste chuỗi Access Token bạn có được vào file này và lưu tên của file tạm vào đâu đó để sử dụng trong các bước tiếp theo. Trong minh hoạ dưới đây, tôi sẽ paste toàn bộ dãy token vào file Google Docs, hãy đảm bảo không có khoảng trắng thừa nhé.Tên của file Google Docs ở đây sẽ là `fb_token_key_clasp`.
 
@@ -49,11 +49,11 @@ Mở Script Editor để làm việc với Google Apps Script từ Google Sheet
 
 Tiếp theo bạn cần tạo 2 file Script trong giao diện Script editor, bạn có thể đặt tên bất kỳ miễn là dễ nhớ để tiện quản lý. Ở đây tôi tạo file `facebook_campaign_report` để chứa đoạn mã dùng cho việc tải báo cáo Facebook Ads và `combine rp` để chứa đoạn mã giúp gom dữ liệu báo cáo hàng ngày vào file tổng hợp. Trong hình dưới đây, ở vị trí số 1 là nơi bạn tương tác với trình soạn thảo lệnh (IDE), vị trí số 2 là nơi bạn click để tạo file Script mới. Khá đơn giản phải không nào.
 
-![apps script create new files](https://thinhvu.com/wp-content/uploads/2021/10/apps_script_create_new_files-1024x487.png "Cập nhật báo cáo Facebook Ads tự động với Google Sheets và Apps Script 5")
+![apps script create new files](https://thinhvu.com/wp-content/uploads/2021/10/apps_script_create_new_files-1024x487.png "Cập nhật báo cáo Facebook Ads tự động với Google Sheets và Apps Script 5")
 
 Cách tạo mới các Script trong Google Apps Script Editor
 
-### 3.4. Bắt tay vào "code" nhé
+### 3.4. Bắt tay vào "code" nhé
 
 #### 3.4.1. Truy xuất Access Token đã lưu trong Google Docs
 
@@ -84,7 +84,7 @@ return content
 #### 3.4.2. Khai báo các thiết lập báo cáo quảng cáo Facebook
 
 -   Khai báo SHEET NAME: Bạn cần khai báo tên của Sheet dùng để lưu trữ dữ liệu báo cáo hàng ngày, ở đây tôi dùng sheet có tên là `FB`.
--   Khai báo AD ACCOUNT ID: Dãy số đặt bên cạnh tên tài khoản quảng cáo của bạn, trong hình ID này được khoanh bởi đường viền màu đỏ.
+-   Khai báo AD ACCOUNT ID: Dãy số đặt bên cạnh tên tài khoản quảng cáo của bạn, trong hình ID này được khoanh bởi đường viền màu đỏ.
 
 ![how to get an ad account id facebook](https://thinhvu.com/wp-content/uploads/2021/10/how_to_get_an_ad_account_id_facebook-1024x487.png "Cập nhật báo cáo Facebook Ads tự động với Google Sheets và Apps Script 6")
 
@@ -324,7 +324,7 @@ return index;
 }
 ```
 
-![google sheets master header](https://thinhvu.com/wp-content/uploads/2021/10/google_sheets_master_header-1024x487.png "Cập nhật báo cáo Facebook Ads tự động với Google Sheets và Apps Script 7")
+![google sheets master header](https://thinhvu.com/wp-content/uploads/2021/10/google_sheets_master_header-1024x487.png "Cập nhật báo cáo Facebook Ads tự động với Google Sheets và Apps Script 7")
 
 Tạo và sắp xếp thứ tự các cột dữ liệu trong sheet Master
 
@@ -334,15 +334,15 @@ Sau khi thiết lập các hàm JavaScript như trên, bạn có thể thực th
 
 -   **Chọn hàm GetReport tại file facebook_campaign_report sau đó chọn Run để thực thi lệnh.** Trong lần đầu tiên thực thi lệnh bạn sẽ được yêu cầu cấp quyền truy cập cho App của bạn (tên app chính là tên Project bạn tạo trong Script editor). Bạn sẽ được cảnh báo vì truy cập nội dung chưa được xác thực an toàn, không có gì nguy hiểm ở đây mà là cảnh báo bảo mật mặc định của Google. Bạn cấp quyền thực thi cho app mới được tạo theo hướng dẫn ở 3 hình dưới đây nhé. Sau khoảng 1-2 phút bạn đã có dữ liệu trong sheet `FB` rồi đấy.
 
-![google apps script review permission](https://thinhvu.com/wp-content/uploads/2021/10/google_apps_script_review_permission-1024x520.png "Cập nhật báo cáo Facebook Ads tự động với Google Sheets và Apps Script 8")
+![google apps script review permission](https://thinhvu.com/wp-content/uploads/2021/10/google_apps_script_review_permission-1024x520.png "Cập nhật báo cáo Facebook Ads tự động với Google Sheets và Apps Script 8")
 
 Chọn Review permissions
 
-![google apps script hasnt verified](https://thinhvu.com/wp-content/uploads/2021/10/google_apps_script_hasnt_verified.png "Cập nhật báo cáo Facebook Ads tự động với Google Sheets và Apps Script 9")
+![google apps script hasnt verified](https://thinhvu.com/wp-content/uploads/2021/10/google_apps_script_hasnt_verified.png "Cập nhật báo cáo Facebook Ads tự động với Google Sheets và Apps Script 9")
 
 Chọn mục advance để cho phép truy cập.
 
-![google apps script authorized](https://thinhvu.com/wp-content/uploads/2021/10/google_apps_script_authorized.png "Cập nhật báo cáo Facebook Ads tự động với Google Sheets và Apps Script 10")
+![google apps script authorized](https://thinhvu.com/wp-content/uploads/2021/10/google_apps_script_authorized.png "Cập nhật báo cáo Facebook Ads tự động với Google Sheets và Apps Script 10")
 
 Ở đây bạn chọn dòng cuối cùng Go to YOUR PROJECT trong trường hợp này project của mình tên là Labs nên sẽ là Go to Labs (unsafe) để tiếp tục.
 
@@ -350,7 +350,7 @@ Chọn mục advance để cho phép truy cập.
 
 ## 4. Thiết lập lịch cập nhật dữ liệu báo cáo
 
-![google apps script config triggers](https://thinhvu.com/wp-content/uploads/2021/10/google_apps_script_config_triggers-1024x489.png "Cập nhật báo cáo Facebook Ads tự động với Google Sheets và Apps Script 11")
+![google apps script config triggers](https://thinhvu.com/wp-content/uploads/2021/10/google_apps_script_config_triggers-1024x489.png "Cập nhật báo cáo Facebook Ads tự động với Google Sheets và Apps Script 11")
 
 Thiết lập Triggers để tự động cập nhật báo cáo Facebook Ads
 
@@ -358,7 +358,7 @@ Sau khi bước kiểm tra và chạy thử đã hoàn tất, bạn có thể s�
 
 -   Hàm `GetReport` lên lịch chạy vào lúc 5-6AM hàng ngày (bạn có thể thay đổi để chạy sớm hơn nếu cần).
 
-![google apps script scheduled facebook report](https://thinhvu.com/wp-content/uploads/2021/10/google_apps_script_scheduled_facebook_report-1024x457.png "Cập nhật báo cáo Facebook Ads tự động với Google Sheets và Apps Script 12")
+![google apps script scheduled facebook report](https://thinhvu.com/wp-content/uploads/2021/10/google_apps_script_scheduled_facebook_report-1024x457.png "Cập nhật báo cáo Facebook Ads tự động với Google Sheets và Apps Script 12")
 
 Thiết lập thời gian thực thi Hàm JavaScript đã tạo
 
