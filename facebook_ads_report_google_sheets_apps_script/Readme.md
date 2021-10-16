@@ -366,6 +366,7 @@ Thiết lập thời gian thực thi Hàm JavaScript đã tạo
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/3_TzGjmZ_Ss" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+
 Hướng dẫn thiết lập Triggers cho Google Apps Script
 
 Như vậy, tôi đã hướng dẫn bạn hoàn thành xong các bước thiết lập 1 ứng dụng để cập nhật báo cáo quảng cáo tự động cho Facebook Ads bằng Google Apps Script rồi đó. Toàn bộ các script sử dụng trong hướng dẫn này, bạn có thể tải về từ Github của tôi tại đây 👉
