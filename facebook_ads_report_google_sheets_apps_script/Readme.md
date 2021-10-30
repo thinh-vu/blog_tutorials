@@ -1,4 +1,4 @@
-![automated facebook ads report to google sheets](https://thinhvu.com/wp-content/uploads/2021/10/automated_facebook_ads_report_to_google_sheets.jpg "Cập nhật báo cáo Facebook Ads tự động với Google Sheets và Apps Script 1")
+![automated facebook ads report to google sheets](https://thinhvu.com/wp-content/uploads/2021/10/automated_facebook_ads_report_to_google_sheets_2.jpg)
 
 # Cập nhật báo cáo Facebook Ads tự động với Google Sheets và Apps Script
 
