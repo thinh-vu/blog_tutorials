@@ -364,6 +364,8 @@ Thiết lập thời gian thực thi Hàm JavaScript đã tạo
 
 -   Hàm `CombineData` lên lịch chạy vào lúc 6-7AM hàng ngày tức sau khi hàm `GetReport` đã tải dữ liệu báo cáo về sheet `FB`. Việc này đảm bảo 2 tác vụ này sẽ được hoàn thành mà hạn chế khả năng gặp lỗi. Tôi cũng đã thử viết Script để kết hợp các hàm trên chạy tự động nhưng đôi khi vẫn gặp lỗi nên dùng cách này thấy khá ổn và khỏi phải suy nghĩ. Bạn có thể tuỳ chỉnh lại giờ tải báo cáo hợp lý với nhu cầu cuả mình. Chi tiết thao tác, bạn có thể tham khảo trong Video dưới đây.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3_TzGjmZ_Ss" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 Hướng dẫn thiết lập Triggers cho Google Apps Script
 
 Như vậy, tôi đã hướng dẫn bạn hoàn thành xong các bước thiết lập 1 ứng dụng để cập nhật báo cáo quảng cáo tự động cho Facebook Ads bằng Google Apps Script rồi đó. Toàn bộ các script sử dụng trong hướng dẫn này, bạn có thể tải về từ Github của tôi tại đây 👉
