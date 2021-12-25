@@ -1,5 +1,5 @@
 # Tự “code” ứng dụng Mail Merge Gmail đơn giản trong 15 phút
-![](mail_merge_gmail_feature_image.png)
+![feature_image](https://thinhvu.com/wp-content/uploads/2021/12/mail_merge_gmail_feature_image.png)
 
 [Productivity](https://thinhvu.com/productivity/) By [mrthinh](https://thinhvu.com/author/mrthinh/) [December 18, 2021](https://thinhvu.com/2021/12/18/tao-ung-dung-mail-merge-gmail-trong-15-phut/)
 
@@ -25,13 +25,13 @@ Nếu email template bạn chọn có chứa các hình ảnh đi kèm thì hãy
 
 Để làm theo tutorial này, bạn hãy ghé thăm repository cho dự án này của tôi trên Github [tại đây](https://github.com/mrthinh/public_repo/tree/main/mail_merge_google_appscript).
 
-![mail merge github repo](https://thinhvu.com/wp-content/uploads/2021/12/mail_merge_github_repo.png "Tự "code" ứng dụng Mail Merge Gmail đơn giản trong 15 phút 2")
+![mail merge github repo](https://thinhvu.com/wp-content/uploads/2021/12/mail_merge_github_repo.png)
 
 Github repository của project Mail Merge Gmail
 
 Trong repo này bạn hãy mở file index.html và copy toàn bộ source code sau đó tạo file index.html (cùng tên) trong Brackets để chỉnh sửa nội dung email phù hợp với nhu cầu của bạn. File index.html có trong repo trên thể hiện email template như dưới đây:
 
-![](https://thinhvu.com/wp-content/uploads/2021/12/mail_merge_gmail_xmas_template.png "Tự "code" ứng dụng Mail Merge Gmail đơn giản trong 15 phút 3")
+![](https://thinhvu.com/wp-content/uploads/2021/12/mail_merge_gmail_xmas_template.png)
 
 Đây là email template mình lựa chọn sử dụng trong project Mail Merge Gmail này.
 
@@ -60,25 +60,25 @@ Sau khi hoàn thành sửa đổi email template với file index.html bạn có
 -   Mở Google AppScript bằng tài khoản Google bạn muốn sử dụng để gửi mail tại địa chỉ [https://script.google.com/home](https://script.google.com/home)
 -   Tạo project mới bằng cách chọn New project
 
-![google apps script new project](https://thinhvu.com/wp-content/uploads/2021/12/google_apps_script_new_project-1024x281.png "Tự "code" ứng dụng Mail Merge Gmail đơn giản trong 15 phút 4")
+![google apps script new project](https://thinhvu.com/wp-content/uploads/2021/12/google_apps_script_new_project-1024x281.png)
 
 Tạo project mới trên Google Apps Script
 
 -   Đặt tên cho project của bạn, ở đây tôi chọn là `Xmas Mail Merge`
 
-![rename mail merge project](https://thinhvu.com/wp-content/uploads/2021/12/rename_mail_merge_project-1024x536.png "Tự "code" ứng dụng Mail Merge Gmail đơn giản trong 15 phút 5")
+![rename mail merge project](https://thinhvu.com/wp-content/uploads/2021/12/rename_mail_merge_project-1024x536.png)
 
 Đặt tên cho project Mail Merge Gmail
 
 -   Tạo file `index.html` và paste source code từ file index.html đã tạo với Brackets
 
-![create code html elements](https://thinhvu.com/wp-content/uploads/2021/12/create_code_html_elements-1024x328.png "Tự "code" ứng dụng Mail Merge Gmail đơn giản trong 15 phút 6")
+![create code html elements](https://thinhvu.com/wp-content/uploads/2021/12/create_code_html_elements-1024x328.png)
 
 Tạo file HTML cho project để cấu hình HTML email template
 
 -   Copy/paste đoạn code từ file `mail_merge_app.js` trong repository trên Github được giới thiệu ở phần trên vào file `Code.gs` có sẵn trong project trên Google Apps Script. Từ đây chúng ta sẽ làm việc với Code.gs là chính.
 
-![Tạo ứng dụng Mail Merge Gmail với Google Apps Script](https://thinhvu.com/wp-content/uploads/2021/12/xmas_mail_merge_code_gs-1024x441.png "Tự "code" ứng dụng Mail Merge Gmail đơn giản trong 15 phút 7")
+![Tạo ứng dụng Mail Merge Gmail với Google Apps Script](https://thinhvu.com/wp-content/uploads/2021/12/xmas_mail_merge_code_gs-1024x441.png)
 
 Giao diện làm việc với file Code.gs trên Google Apps Script (tham khảo)
 
@@ -90,19 +90,19 @@ Cơ bản là các bước cài đặt đã xong. Giờ đây bạn có thể th
 
 Chọn **Run** trên giao diện Script editor để thực thi các dòng lệnh có trong file Code.gs. Lần đầu tiên thực thi các dòng lệnh bạn sẽ cần cấp quyền cho ứng dụng của mình (tên ứng dụng chính là tên function, ở đây là `Mail_Merge_App`). Sẽ không có rủi ro bảo mật nào ở đây, đơn giản bạn chỉ cấp quyền để các ứng dụng của tài khoản Google bạn đang dùng được kết nối với nhau, trong trường hợp này  là Google Apps Script, Google Sheets và Gmail. 
 
--   ![google apps script authen step1](https://thinhvu.com/wp-content/uploads/2021/12/google_apps_script_authen_step1-942x1024.png "Tự "code" ứng dụng Mail Merge Gmail đơn giản trong 15 phút 8")
+![google apps script authen step1](https://thinhvu.com/wp-content/uploads/2021/12/google_apps_script_authen_step1-942x1024.png)
     
     Chọn tài khoản Google sẽ cấp quyền cho ứng dụng
     
--   ![google apps script authen step2](https://thinhvu.com/wp-content/uploads/2021/12/google_apps_script_authen_step2-1024x701.png "Tự "code" ứng dụng Mail Merge Gmail đơn giản trong 15 phút 9")
+![google apps script authen step2](https://thinhvu.com/wp-content/uploads/2021/12/google_apps_script_authen_step2-1024x701.png)
     
     Chọn advanced
     
--   ![google apps script authen step3](https://thinhvu.com/wp-content/uploads/2021/12/google_apps_script_authen_step3-1024x897.png "Tự "code" ứng dụng Mail Merge Gmail đơn giản trong 15 phút 10")
+![google apps script authen step3](https://thinhvu.com/wp-content/uploads/2021/12/google_apps_script_authen_step3-1024x897.png)
     
     Xác thực cấp quyền cho ứng dụng
     
--   ![google apps script authen step4](https://thinhvu.com/wp-content/uploads/2021/12/google_apps_script_authen_step4-916x1024.png "Tự "code" ứng dụng Mail Merge Gmail đơn giản trong 15 phút 11")
+![google apps script authen step4](https://thinhvu.com/wp-content/uploads/2021/12/google_apps_script_authen_step4-916x1024.png)
     
     Cho phép ứng dụng tạo từ Google Apps Script được thực thi
     
@@ -117,7 +117,7 @@ Lưu ý: chỉ có các code có trong các file `*.gs` mới được thực th
 
 Đây là hình ảnh thực tế của email được gửi đi bằng ứng dụng Mail Merge Gmail sử dụng Google Apps Script trong hòm thư của tôi.
 
-![mail merge gmail inbox preview xmas](https://thinhvu.com/wp-content/uploads/2021/12/mail_merge_gmail_inbox_preview_xmas-1024x584.png "Tự "code" ứng dụng Mail Merge Gmail đơn giản trong 15 phút 12")
+![mail merge gmail inbox preview xmas](https://thinhvu.com/wp-content/uploads/2021/12/mail_merge_gmail_inbox_preview_xmas-1024x584.png)
 
 HTML Email được gửi đi bằng ứng dụng Mail Merge Gmail mới được thiết lập trong hòm thư
 
@@ -127,7 +127,7 @@ HTML Email được gửi đi bằng ứng dụng Mail Merge Gmail mới đượ
 
 Trong trường hợp bạn muốn thiết kế 1 HTML email template sử dụng text là chính thay vì cần nhiều yếu tố đồ hoạ thì [html_email_template](https://github.com/leemunroe/responsive-html-email-template) này sẽ là 1 lựa chọn tốt cho bạn. Bạn hãy truy cập repository này và download cả thư mục của repo dưới dạng file zip về máy và mở thư mục làm việc với Brackets để tuỳ chỉnh lại nội dung email cần thiết.
 
-![simple html email template](https://thinhvu.com/wp-content/uploads/2021/12/simple_html_email_template.png "Tự "code" ứng dụng Mail Merge Gmail đơn giản trong 15 phút 13")
+![simple html email template](https://thinhvu.com/wp-content/uploads/2021/12/simple_html_email_template.png)
 
 Để hiểu hơn vể các tag có trong HTML email bạn có thể tham khảo thêm thông tin dưới đây.
 
@@ -151,7 +151,7 @@ Cùng xem qua cấu trúc file HTML chứa nội dung chính của email trên, 
 
 Ngoài nội dung chính trong email, bạn có thể loại bỏ hoàn toàn email footer nếu muốn tạo 1 email template sử dụng hoàn toàn cho mục đích cá nhân. Để loại bỏ footer, bạn hãy xoá toàn bộ đoạn code bắt đầu từ `<!-- START FOOTER -->` cho đến hết `<!-- END FOOTER -->`.
 
-![responsive html email brackets](https://thinhvu.com/wp-content/uploads/2021/12/responsive_html_email_brackets-1024x570.png "Tự "code" ứng dụng Mail Merge Gmail đơn giản trong 15 phút 14")
+![responsive html email brackets](https://thinhvu.com/wp-content/uploads/2021/12/responsive_html_email_brackets-1024x570.png)
 
 Cấu trúc các thẻ trong 1 HTML email và nội dung chính của email trong phần email body
 
@@ -163,7 +163,7 @@ Google Apps Script được xây dựng trên JavaScript nên cũng không quá 
 
 Để tham khảo đầy đủ thông tin về các giới hạn của dịch vụ Google, bạn có thể tham khảo [tại đây](https://developers.google.com/apps-script/guides/services/quotas).
 
-![image](https://thinhvu.com/wp-content/uploads/2021/12/image.png "Tự "code" ứng dụng Mail Merge Gmail đơn giản trong 15 phút 15")
+![image](https://thinhvu.com/wp-content/uploads/2021/12/image.png)
 
 ### Nguồn tham khảo
 
