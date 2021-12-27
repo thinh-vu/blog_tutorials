@@ -1,5 +1,5 @@
 # Tự “code” ứng dụng Mail Merge Gmail đơn giản trong 15 phút
-![feature_image](https://thinhvu.com/wp-content/uploads/2021/12/mail_merge_gmail_feature_image.png)
+![feature_image](https://github.com/mrthinh/public_repo/blob/main/mail_merge_google_appscript/src/mail_merge_gmail_feature_image.png?raw=true)
 
 [Productivity](https://thinhvu.com/productivity/) By [mrthinh](https://thinhvu.com/author/mrthinh/) [December 18, 2021](https://thinhvu.com/2021/12/18/tao-ung-dung-mail-merge-gmail-trong-15-phut/)
 
