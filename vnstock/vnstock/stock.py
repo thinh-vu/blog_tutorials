@@ -3,11 +3,13 @@
 
 import pandas as pd
 import requests
-from pandas.io.json import json_normalize
+from pandas import json_normalize
 
 from datetime import datetime
 from datetime import timedelta
 import time
+
+import pkg_resources
 
 ## STOCK LISTING
 
@@ -66,7 +68,7 @@ def last_xd (day_num): # return the date of last x days
     Raises:
         ValueError: raised whenever any of the introduced arguments is not valid.
     """  
-    last_xd = (today_val - timedelta(day_num)).strftime('%Y-%m-%d')
+    last_xd = (today - timedelta(day_num)).strftime('%Y-%m-%d')
     return last_xd
 
 def start_xm (period): # return the start date of x months
@@ -83,7 +85,7 @@ def start_xm (period): # return the start date of x months
     date = pd.date_range(end=today, periods=period+1, freq='MS')[0].strftime('%Y-%m-%d')
     return date
 
-def stock_intraday_data (symbol, page_size, page_num):
+def stock_intraday_data (symbol, page_num, page_size):
     """
     This function returns the stock realtime intraday data.
     Args:
@@ -98,19 +100,24 @@ def stock_intraday_data (symbol, page_size, page_num):
     Raises:
         ValueError: raised whenever any of the introduced arguments is not valid.
     """
-    data = requests.get('https://apipubaws.tcbs.com.vn/stock-insight/v1/intraday/{}/his/paging?page={}&size={}'.format(symbol, page_size, page_num)).json()
-    df = json_normalize(data['data'])
-    df.rename(columns={'p':'price', 'v':'volume', 't': 'time'})
+    d = datetime.now()
+    if d.weekday() > 4: #today is weekend
+        data = requests.get('https://apipubaws.tcbs.com.vn/stock-insight/v1/intraday/{}/his/paging?page={}&size={}&headIndex=-1'.format(symbol, page_num, page_size)).json()
+    else: #today is weekday
+        data = requests.get('https://apipubaws.tcbs.com.vn/stock-insight/v1/intraday/{}/his/paging?page={}&size={}'.format(symbol, page_num, page_size)).json()
+    df = json_normalize(data['data']).rename(columns={'p':'price', 'v':'volume', 't': 'time'})
     return df
 
 
 # STOCK FILTERING
 
-def financial_ratio ():
+def financial_ratio (symbol):
     """
     This function returns the quarterly financial ratios of a stock symbol. Some of expected ratios are: priceToEarning, priceToBook, roe, roa, bookValuePerShare, etc
+    Args:
+        symbol (:obj:`str`, required): 3 digits name of the desired stock.
     """
-    data = requests.get('https://apipubaws.tcbs.com.vn/tcanalysis/v1/finance/BID/financialratio?yearly=0&isAll=true').json()
+    data = requests.get('https://apipubaws.tcbs.com.vn/tcanalysis/v1/finance/{}/financialratio?yearly=0&isAll=true'.format(symbol)).json()
     df = json_normalize(data)
     return df
 
