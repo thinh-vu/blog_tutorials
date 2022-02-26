@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+vnstock/vnstock.egg-info/PKG-INFO
+vnstock/vnstock.egg-info/SOURCES.txt
+vnstock/vnstock.egg-info/dependency_links.txt
+vnstock/vnstock.egg-info/top_level.txt
