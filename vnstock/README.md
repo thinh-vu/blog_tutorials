@@ -2,21 +2,21 @@
 
 vnstock is a Python package to retrieve the Vietnam stock market data from [TCBS](https://tcbs.com.vn).
 
-vnstock allows the user to download both historical, intraday stock data, and market insights from [TCBS](https://tcbs.com.vn).
+vnstock allows the user to download historical, intraday stock data and market insights from [TCBS](https://tcbs.com.vn).
 
 vnstock is relying on public/private APIs to provide stock data. It is **FREE** and has **NO LIMITATIONS**.
 
 
-## :hammer_and_wrench: Installation
+## 🛠 Installation
 
-To get this package working you will need to **install it via pip** (with a Python 3.7 version or higher) on the terminal by typing:
+To get this package working, you will need to **install it via pip** (with a Python 3.7 version or higher) on the terminal by typing:
 
 ``$ pip install vnstock``
 
 ---
 
-## :computer: Usage
-You can understand some basic functionality of vnstock package by following this guide.
+## 💻 Usage
+You can understand some basic functionality of the vnstock package by following this guide.
 
 ### :chart_with_upwards_trend: Historical Data Retrieval
 
@@ -47,11 +47,11 @@ The result should look like this:
 4    33547.0  33937.0  32669.0  33059.0  4587500  2021-01-08
 ```
 
-### :fire: Intraday Trading Data
+### 🔥 Intraday Trading Data
 ![intraday](./src/tcbs_intraday_screen1.png)
 ![intraday](./src/tcbs_intraday_screen2.png)
 
-vnstock allows the user to **download intraday realtime/historical data**. In 
+vnstock allows the user to **download intraday real-time/historical data**. In 
 the example presented below, you can see the intraday historical data from the last weekday of the current week.
 
 ```python
@@ -137,7 +137,7 @@ index
 2021-Q1    TCB        -143        -143              0     -6954             0
 ```
 
-### 🧧 Divident Historical Data
+### 🧧 Dividend Historical Data
 
 ```python
 from vnstock import *
@@ -252,7 +252,7 @@ You can contact me at one of my social network profiles:
 
 ---
 
-## :warning: Disclaimer
+## ⚠ Disclaimer
 
 This Python package has been made for **research purposes** to fit the needs that tcbs.com does not cover, 
 so this package works like an Application Programming Interface (API) of tcbs.com developed in an **altruistic way**.
