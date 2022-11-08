@@ -2,5 +2,5 @@
 > My Journey in Data Science &amp; Programming for Automation
 
 ## TABLE OF CONTENTS
-### [Python Course Agenda](https://github.com/mrthinh/data_science_and_automation_public/blob/main/python_course/course_toc.md)
-### [Raspberry Quick Start Guide](https://github.com/mrthinh/data_science_and_automation/blob/main/raspberry_pi_handbook.md)
+### 1. [Schedule a Daily Facebook Ads Report with Google Sheets and Google Apps Script](https://github.com/mrthinh/public_repo/tree/main/facebook_ads_report_google_sheets_apps_script)
+### 2. [Raspberry Quick Start Guide](https://github.com/mrthinh/public_repo/tree/main/raspberry_handbook)
